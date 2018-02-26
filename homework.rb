@@ -16,14 +16,14 @@ class Main
 		end
 
 		def show_trains_by_type(type)
-			
+
 			trains.each do |t|
 			if t.type == type
 			puts t
 			end
 			end
 
-		end 
+		end
 
 		def go_train(train)
 			trains.delete(train)
@@ -34,8 +34,8 @@ class Main
 
 	class Rout
 
-		attr_accessor :rout 
-		
+		attr_accessor :rout
+
 		def initialize (start,finish)	#инициализируем начало и конец маршрута
 			@rout = [start, finish]
 		end
@@ -65,7 +65,7 @@ class Main
 			@wagons = wagons
 			@speed = 0
 			@rout = []
-						
+
 		end
 
 		def forsage
@@ -80,7 +80,7 @@ class Main
 
 			if comand != "stop"
 			@speed -=1
-			elsif 
+			elsif
 			@speed == 0
 			puts "Train stopped"
 			end
@@ -90,7 +90,7 @@ class Main
 			if speed == 0
 			@wagons += count
 			end
-		end	
+		end
 
 		def takeoff_wagon(count)
 			if speed == 0
@@ -115,7 +115,7 @@ class Main
 			puts @rout[curent_point+1]
 		end
 
-		
+
 	end
 
 
