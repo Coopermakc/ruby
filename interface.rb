@@ -2,15 +2,16 @@ require_relative 'main'
 
 class Interface
 
-  def initialize
-
+  def text
+    puts "1 - Create Station, 2 - Create Train,  3 - Add Wagon, 4 - del Wagon,
+      5 - add Train to station, 6 - List Station, 7 - List Train on Station, 0 - exit"
   end
-  console = Console.new
+
+
   def start
     loop do
 
-        puts "1 - Create Station, 2 - Create Train,  3 - Add Wagon, 4 - del Wagon,
-      5 - add Train to station, 6 - List Station, 7 - List Train on Station, 0 - exit"
+      text
 
         key = gets.chomp
         case key
@@ -23,6 +24,7 @@ class Interface
         when "2"
           puts "1 - passtrain 2 - cargotrain"
           type = gets.chomp
+          cbrake if (type != 1) || (type != 2)
           console.create_train(type)
 
         when "3"
